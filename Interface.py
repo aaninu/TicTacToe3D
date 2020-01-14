@@ -96,12 +96,14 @@ class Interface:
 					if (AvailableMove == 0):
 						if (debug_mode): print ("[DebugMode]: {Auto} Jocul s-a incheiat. Nu mai sunt mutari disponibile.")
 						if(game_popup): tkinter.messagebox.showinfo(window_name, "Salut " +str(player_name)+ ", \nNu mai sunt mutari disponibile.")
+						Rqm.Send_POST(player_name, 0, 0, game_size)
 				else:
 					if (debug_mode): print ("[DebugMode]: Pozitia selectata este deja ocupata.")
 					if(game_popup): tkinter.messagebox.showinfo(window_name, "Salut " +str(player_name)+ ", \nPozitia selectata este deja ocupata. Trebuie sa alegi alta pozitie.")
 			else:
 				if (debug_mode): print ("[DebugMode]: Jocul s-a incheiat. Nu mai sunt mutari disponibile.")
 				if(game_popup): tkinter.messagebox.showinfo(window_name, "Salut " +str(player_name)+ ", \nJocul s-a incheiat. Nu mai sunt mutari disponibile.")
+				Rqm.Send_POST(player_name, 0, 0, game_size)
 		else:
 			if (debug_mode): print ("[DebugMode]: Jocul s-a incheiat. Avem un castigator. Poti incepe un joc nou.")
 			if(game_popup): tkinter.messagebox.showinfo(window_name, "Salut " +str(player_name)+ ", \nJocul s-a incheiat. Avem un castigator. Poti incepe un joc nou.")
@@ -510,6 +512,7 @@ class Interface:
 						A_Buttons[Index_3][Pos3_i][Pos3_j].config(bg = button_win)
 						win_player += 1
 						S_Jucator.config(text = "Jucator: {" +str(win_player)+ "}")
+						Rqm.Send_POST(player_name, 1, 0, game_size)
 						game_status = False
 						break
 				# Check if O win GAME
@@ -524,6 +527,7 @@ class Interface:
 						A_Buttons[Index_3][Pos3_i][Pos3_j].config(bg = button_win)
 						win_computer += 1
 						S_Calculator.config(text = "Calculator: {" +str(win_computer)+ "}")
+						Rqm.Send_POST(player_name, 0, 1, game_size)
 						game_status = False
 						break
 		# Game size: 4x4x4
@@ -559,6 +563,7 @@ class Interface:
 						A_Buttons[Index_4][Pos4_i][Pos4_j].config(bg = button_win)
 						win_player += 1
 						S_Jucator.config(text = "Jucator: {" +str(win_player)+ "}")
+						Rqm.Send_POST(player_name, 1, 0, game_size)
 						game_status = False
 						break
 				# Check if O win GAME
@@ -574,6 +579,7 @@ class Interface:
 						A_Buttons[Index_4][Pos4_i][Pos4_j].config(bg = button_win)
 						win_computer += 1
 						S_Calculator.config(text = "Calculator: {" +str(win_computer)+ "}")
+						Rqm.Send_POST(player_name, 0, 1, game_size)
 						game_status = False
 						break
 		# Daca scorul celor doi este identic, vor avea aceeasi culoare
