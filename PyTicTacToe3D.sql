@@ -1,0 +1,15 @@
+
+CREATE TABLE `PyTicTacToe3D` (
+  `id` int(11) NOT NULL,
+  `pName` longtext CHARACTER SET utf8 NOT NULL,
+  `gWin` int(11) NOT NULL DEFAULT 0,
+  `gFail` int(11) NOT NULL DEFAULT 0,
+  `gMode` enum('3','4') NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+ALTER TABLE `PyTicTacToe3D`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `PyTicTacToe3D`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
