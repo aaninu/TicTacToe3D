@@ -9,3 +9,4 @@ python3 PyTicTacToe3D.py
 # Packages
 - pygame
 - tkinter
+- requests
