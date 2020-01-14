@@ -1,3 +1,16 @@
+#!/usr/bin/python3
+
+"""
+Tic Tac Toe 3D
+In aceasta librarie este construit si deschis serverul socket.
+
+Mai multe detalii: http://aninu.xyz/post/tic-tac-toe-3d-python3/
+"""
+
+__version__ = '1.2'
+__date__    = '15.01.2020'
+__author__  = 'Anghelina Alin <dev@aninu.ro>'
+
 import socket
 import sys
 import traceback
