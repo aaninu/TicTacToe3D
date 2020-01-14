@@ -10,3 +10,7 @@ python3 PyTicTacToe3D.py
 - pygame
 - tkinter
 - requests
+- socket
+- sys
+- traceback
+- threading
