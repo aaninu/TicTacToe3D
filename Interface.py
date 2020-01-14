@@ -7,9 +7,9 @@ In aceasta librarie este construit intreg jocul.
 Mai multe detalii: http://aninu.xyz/post/tic-tac-toe-3d-python3/
 """
 
-__version__ = '1.0'
+__version__ = '1.2'
 __date__    = '01.01.2018'
-__author__  = 'Anghelina Alin <contact@aninu.xyz>'
+__author__  = 'Anghelina Alin <contact@aninu.ro>'
 
 import time
 from Settings import *
@@ -97,6 +97,7 @@ class Interface:
 						if (debug_mode): print ("[DebugMode]: {Auto} Jocul s-a incheiat. Nu mai sunt mutari disponibile.")
 						if(game_popup): tkinter.messagebox.showinfo(window_name, "Salut " +str(player_name)+ ", \nNu mai sunt mutari disponibile.")
 						Rqm.Send_POST(player_name, 0, 0, game_size)
+						Sok.message_to_server("Jocul dintre calculator si "+str(player_name)+" s-a terminat remiza.")
 				else:
 					if (debug_mode): print ("[DebugMode]: Pozitia selectata este deja ocupata.")
 					if(game_popup): tkinter.messagebox.showinfo(window_name, "Salut " +str(player_name)+ ", \nPozitia selectata este deja ocupata. Trebuie sa alegi alta pozitie.")
@@ -104,6 +105,7 @@ class Interface:
 				if (debug_mode): print ("[DebugMode]: Jocul s-a incheiat. Nu mai sunt mutari disponibile.")
 				if(game_popup): tkinter.messagebox.showinfo(window_name, "Salut " +str(player_name)+ ", \nJocul s-a incheiat. Nu mai sunt mutari disponibile.")
 				Rqm.Send_POST(player_name, 0, 0, game_size)
+				Sok.message_to_server("Jocul dintre calculator si "+str(player_name)+" s-a terminat remiza.")
 		else:
 			if (debug_mode): print ("[DebugMode]: Jocul s-a incheiat. Avem un castigator. Poti incepe un joc nou.")
 			if(game_popup): tkinter.messagebox.showinfo(window_name, "Salut " +str(player_name)+ ", \nJocul s-a incheiat. Avem un castigator. Poti incepe un joc nou.")
@@ -212,8 +214,10 @@ class Interface:
 		(Button) Salveaza numele jucatorului
 		"""
 		global player_name
+		old_name = player_name
 		player_name = P_in.get()
 		if (debug_mode): print ("[DebugMode]: Numele jucatorului este: " +str(player_name))
+		Sok.message_to_server("Jucatorul a schimbat numele din {" +str(old_name)+ "} in {" +str(player_name)+ "}.")
 		return 0
 	
 	def AddOtherDesign(self, window):
@@ -513,6 +517,7 @@ class Interface:
 						win_player += 1
 						S_Jucator.config(text = "Jucator: {" +str(win_player)+ "}")
 						Rqm.Send_POST(player_name, 1, 0, game_size)
+						Sok.message_to_server("Acest joc a fost castigat de " +str(player_name)+ ".")
 						game_status = False
 						break
 				# Check if O win GAME
@@ -528,6 +533,7 @@ class Interface:
 						win_computer += 1
 						S_Calculator.config(text = "Calculator: {" +str(win_computer)+ "}")
 						Rqm.Send_POST(player_name, 0, 1, game_size)
+						Sok.message_to_server("Acest joc a fost castigat de calculator.")
 						game_status = False
 						break
 		# Game size: 4x4x4
@@ -564,6 +570,7 @@ class Interface:
 						win_player += 1
 						S_Jucator.config(text = "Jucator: {" +str(win_player)+ "}")
 						Rqm.Send_POST(player_name, 1, 0, game_size)
+						Sok.message_to_server("Acest joc a fost castigat de " +str(player_name)+ ".")
 						game_status = False
 						break
 				# Check if O win GAME
@@ -580,6 +587,7 @@ class Interface:
 						win_computer += 1
 						S_Calculator.config(text = "Calculator: {" +str(win_computer)+ "}")
 						Rqm.Send_POST(player_name, 0, 1, game_size)
+						Sok.message_to_server("Acest joc a fost castigat de calculator.")
 						game_status = False
 						break
 		# Daca scorul celor doi este identic, vor avea aceeasi culoare

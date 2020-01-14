@@ -1,7 +1,7 @@
 import requests 
 
 # URL API POST Requrst
-API_ENDPOINT = "{YOUR_URL}/PyTicTacToe3D/post.php"
+API_ENDPOINT = "http://demo.aninu.ro/PyTicTacToe3D/post.php"
   
 # Define function
 def Send_POST(player, win, fail, mode): 

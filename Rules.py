@@ -8,9 +8,9 @@ Acestea sunt folosite pentru calculator pentru a gasii cea mai buna varianta de 
 Mai multe detalii: http://aninu.xyz/post/tic-tac-toe-3d-python3/
 """
 
-__version__ = '1.0'
+__version__ = '1.2'
 __date__    = '01.01.2018'
-__author__  = 'Anghelina Alin <contact@aninu.xyz>'
+__author__  = 'Anghelina Alin <contact@aninu.ro>'
 
 Rules_3x3x3 = [
 	# Reguli fixe pentru area 1

@@ -7,11 +7,13 @@ In aceasta librarie sunt toate setarile si variabilele generale folosite de joc.
 Mai multe detalii: http://aninu.xyz/post/tic-tac-toe-3d-python3/
 """
 
-__version__ = '1.0'
+__version__ = '1.2'
 __date__    = '01.01.2018'
-__author__  = 'Anghelina Alin <contact@aninu.xyz>'
+__author__  = 'Anghelina Alin <contact@aninu.ro>'
 
 from Rules import *
+import Requests as Rqm
+import Sockets as Sok
 
 # Debug Mode
 debug_mode = True
