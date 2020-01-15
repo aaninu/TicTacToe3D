@@ -1,6 +1,14 @@
 # TicTacToe3D
 Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
 
+Versions of game:
+
+**1.0:** The game contain size of the window (3 or 4) and the style. Play with the computer. Change the name of player. 
+
+**1.1:** Contain **1.0** and a REST API for share the informations about score to a web server.  
+
+**1.2:** Contain **1.1** and a Client / Server Socket.
+
 # Packages
 - pygame
 - tkinter
