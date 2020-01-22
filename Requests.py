@@ -23,3 +23,16 @@ def Send_POST(player, win, fail, mode):
     r = requests.post(url = API_ENDPOINT, data = data) 
     print ("[Request]: Received: {" + str(r.text) + "}")
     return 0
+
+# Show My IP Address
+def Get_IPAddress():
+    print ("[Request.IPv4]: Show my IPv4")
+    try:
+        url = "http://api.ipify.org?format=json"
+        r = requests.get(url = url) 
+        print ("[Request.IPv4]: Received: {" + str(r.text) + "}")
+    except Exception as ex:
+        print ("[Request.IPv4]: Received an error: {" +str(ex)+ "}")
+        
+    return 0
+  
