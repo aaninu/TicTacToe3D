@@ -9,6 +9,8 @@ Versions of game (https://github.com/aaninu/TicTacToe3D/releases):
 
 **1.2:** Contain **1.1** and a Client / Server Socket.
 
+**1.3:** Contain **1.2** and using ***ipify.org*** will show the IPv4 Address when the game is open. 
+
 # Packages
 - pygame
 - tkinter
